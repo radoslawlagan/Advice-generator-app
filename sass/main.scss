@@ -1,0 +1,98 @@
+@import './colors';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	height: 100vh;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 2.8rem;
+	font-family: 'Manrope', sans-serif;
+	background-color: $dark-blue;
+	color: $liight-cyan;
+}
+
+.rotate {
+	transform: rotate(360deg);
+}
+
+.advice-box {
+	width: clamp(300px, 85vw, 800px);
+	padding: 1em 1em;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	background-color: $dark-grayish-blue;
+
+	&__heading,
+	&__number {
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		font-size: 1.4rem;
+		color: $neon-green;
+	}
+
+	&__text {
+		padding: 1em 0;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+
+	&__img {
+		padding-bottom: 1.5em;
+		content: url(../images/pattern-divider-mobile.svg);
+	}
+
+	&__icon-box {
+		width: 65px;
+		height: 65px;
+		position: absolute;
+		bottom: -30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		color: $dark-grayish-blue;
+		background-color: $neon-green;
+		transition: box-shadow 1s, transform 1s;
+
+		&:hover {
+			box-shadow: 0px 0px 25px $neon-green;
+
+			cursor: pointer;
+		}
+	}
+}
+
+.attribution {
+	margin-top: 7em;
+	font-size: 1.3rem;
+	text-align: center;
+
+	&__link {
+		text-decoration: none;
+		color: $neon-green;
+		transition: text-shadow 0.5s;
+
+		&:hover {
+			text-shadow: 0px 0px 10px $neon-green;
+		}
+	}
+}
