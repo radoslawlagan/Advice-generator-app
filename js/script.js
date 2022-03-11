@@ -1,10 +1,10 @@
-const adviceNumber = document.querySelector('.advice-box__number');
-const adviceText = document.querySelector('.advice-box__text-content');
-const iconBox = document.querySelector('.advice-box__icon-box');
-const URL = 'https://api.adviceslip.com/advice';
+const adviceNumber = document.querySelector('.advice-box__number')
+const adviceText = document.querySelector('.advice-box__text-content')
+const iconBox = document.querySelector('.advice-box__icon-box')
+const URL = 'https://api.adviceslip.com/advice'
 
 const getAdvice = () => {
-	fetch(URL)
+	fetch(URL, { cache: 'no-store' })
 		.then((res) => res.json())
 		.then(
 			(data) => (
@@ -12,12 +12,12 @@ const getAdvice = () => {
 				(adviceText.textContent = data.slip.advice)
 			)
 		)
-		.catch((err) => console.log(err));
+		.catch((err) => console.log(err))
 
-	iconBox.classList.add('rotate');
-	setTimeout(() => iconBox.classList.remove('rotate'), 1000);
-};
+	iconBox.classList.add('rotate')
+	setTimeout(() => iconBox.classList.remove('rotate'), 1000)
+}
 
-getAdvice();
+getAdvice()
 
-iconBox.addEventListener('click', getAdvice);
+iconBox.addEventListener('click', getAdvice)
